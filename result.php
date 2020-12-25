@@ -242,7 +242,7 @@ fclose($openFile);
         </div>
     </div>
     <div class="btn-area">
-        <a href="http://localhost/gs_dev18_06/post.php" class="btn btn-border-shadow btn-border-shadow--color2">戻る</a>
+        <a href="http://localhost/gs_dev18_06/index.php" class="btn btn-border-shadow btn-border-shadow--color2">戻る</a>
     </div>
 
 </body>
