@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+.contents {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* ------------------ */
+/* -----テーブル----- */
+/* ------------------ */
+
+.table-form {
+    width: 100%;
+}
+
+table {
+    box-sizing: border-box;
+    border-collapse: separate;
+    border-spacing: 0;
+    /* border: 1px solid #ccc; */
+}
+
+th {
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    width: 300px;
+    background-color: #f7f7f7;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.first-child {
+    border-top: 1px solid #ccc;
+}
+
+td {
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    width: auto;
+    padding: 20px;
+}
+
+/* ------------------ */
+/* -テキストボックス- */
+/* ------------------ */
+
+.textbox {
+    width: 300px;
+    padding: 5px;
+}
+
+/* ------------------ */
+/* ------ラベル------ */
+/* ------------------ */
+
+input[type='radio'] {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+label {
+	position: relative;
+	display: inline-block;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    padding-top: 2px;   /* ●位置と揃えるため。border2pxが影響しているため。 */
+	padding-right: 10px;
+    padding-left: 30px;
+	cursor: pointer;
+}
+label::before {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 16px;
+	height: 16px;
+	content: ' ';
+	border: 2px solid #eb6100;
+	border-radius: 4px;
+}
+input[type='radio'] + label::before {
+	border-radius: 16px;
+}
+input[type='radio']:checked + label {
+    padding-top: 5px;
+	padding-left: 10px;
+	color: #ffffff;
+}
+input[type='radio']:checked + label::before {
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #eb6100;
+}
+/* Transition */
+label, label::before {
+	-webkit-transition: 0.25s all ease;
+	transition: 0.25s all ease;
+}
+
+/* ------------------ */
+/* ----送信ボタン---- */
+/* ------------------ */
+
+.btn.center {
+    display: block;
+    margin: 50px auto;
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #eb6100;
+    border: none;
+    border-bottom: 5px solid #b84c00;
+    -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+}
+
+.btn.center:hover {
+    margin: 53px auto 50px;
+    color: #fff;
+    background: #f56500;
+    border: none;
+    border-bottom: 2px solid #b84c00;
+}
