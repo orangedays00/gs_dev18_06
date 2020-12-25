@@ -133,8 +133,6 @@ foreach ($contents as $content) {
 
 }
 
-// ファイルを閉じる
-fclose($openFile);
 ?>
 
 <!DOCTYPE html>
