@@ -145,15 +145,15 @@ foreach ($contents as $content) {
     <title>投稿結果</title>
 </head>
 <body>
-    <h1>アンケート結果</h1>
+<h1>アンケート結果</h1>
     <div class="parents">
         <div class="child">
             <p class="title">現在の年収について</p>
             <?php
-            echo "<table>";
+            echo "<table id='nowIncomeTable'>";
 
             foreach ($nowIncomeArray as $key=>$val) {
-                echo "<tr><th>" . $key . "</th><td>" . $val . "</td></tr>";
+                echo "<tr><th><span>" . $key . "</span></th><td><span>" . $val . "</span></td></tr>";
             }
 
             echo "</table>";
@@ -163,10 +163,10 @@ foreach ($contents as $content) {
         <div class="child">
             <p class="title">現在の雇用形態について</p>
             <?php
-            echo "<table>";
+            echo "<table id='nowEmployTable'>";
 
             foreach ($nowEmploymentArray as $key=>$val) {
-                echo "<tr><th>" . $key . "</th><td>" . $val . "</td></tr>";
+                echo "<tr><th><span>" . $key . "</span></th><td><span>" . $val . "</span></td></tr>";
             }
 
             echo "</table>";
@@ -176,10 +176,10 @@ foreach ($contents as $content) {
         <div class="child">
             <p class="title">現在の役職について</p>
             <?php
-            echo "<table>";
+            echo "<table id='nowPositionTable'>";
 
             foreach ($nowPositionArray as $key=>$val) {
-                echo "<tr><th>" . $key . "</th><td>" . $val . "</td></tr>";
+                echo "<tr><th><span>" . $key . "</span></th><td><span>" . $val . "</span></td></tr>";
             }
 
             echo "</table>";
@@ -189,10 +189,10 @@ foreach ($contents as $content) {
         <div class="child">
             <p class="title">希望の年収について</p>
             <?php
-            echo "<table>";
+            echo "<table id='hopeIncomeTable'>";
 
             foreach ($hopeIncomeArray as $key=>$val) {
-                echo "<tr><th>" . $key . "</th><td>" . $val . "</td></tr>";
+                echo "<tr><th><span>" . $key . "</span></th><td><span>" . $val . "</span></td></tr>";
             }
 
             echo "</table>";
@@ -202,10 +202,10 @@ foreach ($contents as $content) {
         <div class="child">
             <p class="title">希望の雇用形態について</p>
             <?php
-            echo "<table>";
+            echo "<table id='hopeEmploymentTable'>";
 
             foreach ($hopeEmploymentArray as $key=>$val) {
-                echo "<tr><th>" . $key . "</th><td>" . $val . "</td></tr>";
+                echo "<tr><th><span>" . $key . "</span></th><td><span>" . $val . "</span></td></tr>";
             }
 
             echo "</table>";
@@ -215,10 +215,10 @@ foreach ($contents as $content) {
         <div class="child">
             <p class="title">希望の役職について</p>
             <?php
-            echo "<table>";
+            echo "<table id='hopePositionTable'>";
 
             foreach ($hopePositionArray as $key=>$val) {
-                echo "<tr><th>" . $key . "</th><td>" . $val . "</td></tr>";
+                echo "<tr><th><span>" . $key . "</span></th><td><span>" . $val . "</span></td></tr>";
             }
 
             echo "</table>";
@@ -228,10 +228,10 @@ foreach ($contents as $content) {
         <div class="child">
             <p class="title">転職希望時期について</p>
             <?php
-            echo "<table>";
+            echo "<table id='jobChangeTable'>";
 
             foreach ($jobChangeArray as $key=>$val) {
-                echo "<tr><th>" . $key . "</th><td>" . $val . "</td></tr>";
+                echo "<tr><th><span>" . $key . "</span></th><td><span>" . $val . "</span></td></tr>";
             }
 
             echo "</table>";
@@ -239,9 +239,30 @@ foreach ($contents as $content) {
             ?>
         </div>
     </div>
+    <div class="parents">
+        <canvas class="child-charts" id="nowIncome" width="400" height="400"></canvas>
+        <canvas class="child-charts" id="nowEmployment" width="400" height="400"></canvas>
+        <canvas class="child-charts" id="nowPosition" width="400" height="400"></canvas>
+        <canvas class="child-charts" id="hopeIncome" width="400" height="400"></canvas>
+        <canvas class="child-charts" id="hopeEmployment" width="400" height="400"></canvas>
+        <canvas class="child-charts" id="hopePosition" width="400" height="400"></canvas>
+        <canvas class="child-charts" id="changeJobs" width="400" height="400"></canvas>
+
+    </div>
     <div class="btn-area">
         <a href="http://localhost/gs_dev18_06/index.php" class="btn btn-border-shadow btn-border-shadow--color2">戻る</a>
     </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+<script src="js/main.js"></script>
+<script>chart('nowIncomeTable','nowIncome')</script>
+<script>chart('nowEmployTable','nowEmployment')</script>
+<script>chart('nowPositionTable','nowPosition')</script>
+<script>chart('hopeIncomeTable','hopeIncome')</script>
+<script>chart('hopeEmploymentTable','hopeEmployment')</script>
+<script>chart('hopePositionTable','hopePosition')</script>
+<script>chart('jobChangeTable','changeJobs')</script>
 
 </body>
 </html>
